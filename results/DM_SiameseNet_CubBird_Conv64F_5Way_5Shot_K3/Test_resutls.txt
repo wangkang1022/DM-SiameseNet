@@ -1,0 +1,368 @@
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='CubBird', dataset_dir='../CubBird', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.0001, mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3', print_freq=100, query_num=15, resume='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar', shot_num=5, testepisodeSize=1, way_num=5, workers=8)
+./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar
+=> loaded checkpoint './results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar' (epoch 1)
+FourLayer_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (classifier): DM_SiameseNet_Metric(
+    (fully_connect1): Linear(in_features=28224, out_features=1, bias=True)
+    (Norm_layer): BatchNorm1d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (FC_layer): Conv1d(1, 1, kernel_size=(2,), stride=(1,), dilation=(5,), bias=False)
+  )
+)
+===================================== Round 0 =====================================
+Testset: 1000-------------0
+Test-(1): [100/1000]	Time 0.359 (0.388)	Loss 0.655 (0.533)	Prec@1 81.333 (81.452)
+Test-(1): [200/1000]	Time 0.377 (0.380)	Loss 0.401 (0.544)	Prec@1 78.667 (81.459)
+Test-(1): [300/1000]	Time 0.363 (0.387)	Loss 0.672 (0.554)	Prec@1 82.667 (81.094)
+Test-(1): [400/1000]	Time 0.361 (0.388)	Loss 0.320 (0.555)	Prec@1 90.667 (81.124)
+Test-(1): [500/1000]	Time 0.380 (0.384)	Loss 0.636 (0.555)	Prec@1 78.667 (81.192)
+Test-(1): [600/1000]	Time 0.493 (0.386)	Loss 0.502 (0.554)	Prec@1 81.333 (81.123)
+Test-(1): [700/1000]	Time 0.376 (0.386)	Loss 0.534 (0.557)	Prec@1 80.000 (81.086)
+Test-(1): [800/1000]	Time 0.346 (0.385)	Loss 1.135 (0.555)	Prec@1 60.000 (81.079)
+Test-(1): [900/1000]	Time 0.407 (0.384)	Loss 0.403 (0.553)	Prec@1 85.333 (81.165)
+ * Prec@1 81.137 Best_prec1 78.033
+Test accuracy 81.13734 h 0.45468837
+===================================== Round 1 =====================================
+Testset: 1000-------------1
+Test-(1): [100/1000]	Time 0.491 (0.394)	Loss 0.401 (0.556)	Prec@1 85.333 (80.898)
+Test-(1): [200/1000]	Time 0.360 (0.403)	Loss 0.466 (0.579)	Prec@1 82.667 (80.285)
+Test-(1): [300/1000]	Time 0.357 (0.394)	Loss 0.172 (0.586)	Prec@1 97.333 (80.084)
+Test-(1): [400/1000]	Time 0.347 (0.398)	Loss 0.410 (0.587)	Prec@1 82.667 (80.013)
+Test-(1): [500/1000]	Time 0.396 (0.405)	Loss 0.671 (0.580)	Prec@1 77.333 (80.290)
+Test-(1): [600/1000]	Time 0.408 (0.402)	Loss 1.030 (0.582)	Prec@1 65.333 (80.302)
+Test-(1): [700/1000]	Time 0.447 (0.404)	Loss 0.767 (0.580)	Prec@1 72.000 (80.432)
+Test-(1): [800/1000]	Time 0.368 (0.406)	Loss 0.572 (0.581)	Prec@1 84.000 (80.421)
+Test-(1): [900/1000]	Time 0.429 (0.408)	Loss 0.404 (0.580)	Prec@1 93.333 (80.425)
+ * Prec@1 80.369 Best_prec1 78.033
+Test accuracy 80.36933 h 0.47535512
+===================================== Round 2 =====================================
+Testset: 1000-------------2
+Test-(1): [100/1000]	Time 0.384 (0.396)	Loss 0.584 (0.576)	Prec@1 80.000 (80.752)
+Test-(1): [200/1000]	Time 0.389 (0.381)	Loss 0.473 (0.588)	Prec@1 85.333 (80.577)
+Test-(1): [300/1000]	Time 0.472 (0.385)	Loss 0.577 (0.588)	Prec@1 81.333 (80.465)
+Test-(1): [400/1000]	Time 0.384 (0.399)	Loss 0.765 (0.578)	Prec@1 68.000 (80.712)
+Test-(1): [500/1000]	Time 0.414 (0.396)	Loss 0.683 (0.581)	Prec@1 66.667 (80.585)
+Test-(1): [600/1000]	Time 0.476 (0.403)	Loss 0.331 (0.576)	Prec@1 88.000 (80.774)
+Test-(1): [700/1000]	Time 0.361 (0.409)	Loss 1.017 (0.577)	Prec@1 69.333 (80.753)
+Test-(1): [800/1000]	Time 0.360 (0.407)	Loss 0.353 (0.576)	Prec@1 82.667 (80.792)
+Test-(1): [900/1000]	Time 0.465 (0.406)	Loss 0.439 (0.578)	Prec@1 84.000 (80.678)
+ * Prec@1 80.708 Best_prec1 78.033
+Test accuracy 80.708 h 0.4927175
+===================================== Round 3 =====================================
+Testset: 1000-------------3
+Test-(1): [100/1000]	Time 0.327 (0.392)	Loss 0.287 (0.561)	Prec@1 90.667 (80.964)
+Test-(1): [200/1000]	Time 0.371 (0.381)	Loss 0.818 (0.562)	Prec@1 65.333 (80.909)
+Test-(1): [300/1000]	Time 0.403 (0.378)	Loss 0.429 (0.554)	Prec@1 84.000 (80.988)
+Test-(1): [400/1000]	Time 0.381 (0.377)	Loss 0.907 (0.558)	Prec@1 70.667 (80.958)
+Test-(1): [500/1000]	Time 0.393 (0.377)	Loss 0.241 (0.560)	Prec@1 90.667 (80.931)
+Test-(1): [600/1000]	Time 0.387 (0.378)	Loss 0.673 (0.562)	Prec@1 68.000 (80.754)
+Test-(1): [700/1000]	Time 0.462 (0.383)	Loss 0.572 (0.569)	Prec@1 81.333 (80.561)
+Test-(1): [800/1000]	Time 0.388 (0.383)	Loss 0.385 (0.568)	Prec@1 88.000 (80.601)
+Test-(1): [900/1000]	Time 0.393 (0.383)	Loss 0.668 (0.571)	Prec@1 77.333 (80.590)
+ * Prec@1 80.612 Best_prec1 78.033
+Test accuracy 80.612 h 0.48869056
+===================================== Round 4 =====================================
+Testset: 1000-------------4
+Test-(1): [100/1000]	Time 0.387 (0.412)	Loss 0.432 (0.514)	Prec@1 81.333 (82.244)
+Test-(1): [200/1000]	Time 0.379 (0.395)	Loss 1.005 (0.534)	Prec@1 66.667 (81.612)
+Test-(1): [300/1000]	Time 0.394 (0.392)	Loss 0.278 (0.540)	Prec@1 88.000 (81.338)
+Test-(1): [400/1000]	Time 0.463 (0.393)	Loss 0.534 (0.554)	Prec@1 82.667 (81.071)
+Test-(1): [500/1000]	Time 0.463 (0.407)	Loss 0.634 (0.556)	Prec@1 78.667 (80.982)
+Test-(1): [600/1000]	Time 0.357 (0.407)	Loss 1.329 (0.560)	Prec@1 64.000 (80.847)
+Test-(1): [700/1000]	Time 0.380 (0.406)	Loss 0.708 (0.564)	Prec@1 77.333 (80.668)
+Test-(1): [800/1000]	Time 0.360 (0.403)	Loss 0.916 (0.570)	Prec@1 73.333 (80.543)
+Test-(1): [900/1000]	Time 0.357 (0.402)	Loss 0.856 (0.566)	Prec@1 78.667 (80.676)
+ * Prec@1 80.679 Best_prec1 78.033
+Test accuracy 80.67867 h 0.4971818
+Aver_accuracy: 80.70107 Aver_h 0.4817266702651978
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='CubBird', dataset_dir='../CubBird', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.0001, mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3', print_freq=100, query_num=15, resume='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar', shot_num=5, testepisodeSize=1, way_num=5, workers=8)
+./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar
+=> loaded checkpoint './results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar' (epoch 1)
+FourLayer_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (classifier): DM_SiameseNet_Metric(
+    (fully_connect1): Linear(in_features=28224, out_features=1, bias=True)
+    (Norm_layer): BatchNorm1d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (FC_layer): Conv1d(1, 1, kernel_size=(2,), stride=(1,), dilation=(5,), bias=False)
+  )
+)
+===================================== Round 0 =====================================
+Testset: 1000-------------0
+Test-(1): [100/1000]	Time 0.370 (0.381)	Loss 0.523 (0.523)	Prec@1 85.333 (81.307)
+Test-(1): [200/1000]	Time 0.346 (0.368)	Loss 0.314 (0.525)	Prec@1 88.000 (81.692)
+Test-(1): [300/1000]	Time 0.340 (0.382)	Loss 0.247 (0.523)	Prec@1 88.000 (81.834)
+Test-(1): [400/1000]	Time 0.401 (0.379)	Loss 0.225 (0.535)	Prec@1 86.667 (81.589)
+Test-(1): [500/1000]	Time 0.387 (0.377)	Loss 0.735 (0.541)	Prec@1 80.000 (81.395)
+Test-(1): [600/1000]	Time 0.350 (0.383)	Loss 0.728 (0.548)	Prec@1 78.667 (81.127)
+Test-(1): [700/1000]	Time 0.360 (0.382)	Loss 0.475 (0.550)	Prec@1 84.000 (81.145)
+Test-(1): [800/1000]	Time 0.354 (0.381)	Loss 0.773 (0.551)	Prec@1 72.000 (81.222)
+Test-(1): [900/1000]	Time 0.352 (0.384)	Loss 0.420 (0.552)	Prec@1 86.667 (81.230)
+ * Prec@1 81.123 Best_prec1 78.033
+Test accuracy 81.122665 h 0.46890172
+===================================== Round 1 =====================================
+Testset: 1000-------------1
+Test-(1): [100/1000]	Time 0.398 (0.380)	Loss 0.188 (0.537)	Prec@1 92.000 (82.416)
+Test-(1): [200/1000]	Time 0.413 (0.371)	Loss 1.140 (0.557)	Prec@1 58.667 (81.333)
+Test-(1): [300/1000]	Time 0.381 (0.375)	Loss 0.676 (0.567)	Prec@1 72.000 (80.868)
+Test-(1): [400/1000]	Time 0.341 (0.375)	Loss 0.857 (0.576)	Prec@1 76.000 (80.565)
+Test-(1): [500/1000]	Time 0.475 (0.383)	Loss 0.683 (0.571)	Prec@1 74.667 (80.671)
+Test-(1): [600/1000]	Time 0.393 (0.386)	Loss 0.601 (0.571)	Prec@1 76.000 (80.588)
+Test-(1): [700/1000]	Time 0.390 (0.390)	Loss 1.301 (0.571)	Prec@1 57.333 (80.582)
+Test-(1): [800/1000]	Time 0.375 (0.388)	Loss 0.705 (0.575)	Prec@1 76.000 (80.449)
+Test-(1): [900/1000]	Time 0.331 (0.386)	Loss 0.301 (0.573)	Prec@1 88.000 (80.537)
+ * Prec@1 80.616 Best_prec1 78.033
+Test accuracy 80.616005 h 0.48377362
+===================================== Round 2 =====================================
+Testset: 1000-------------2
+Test-(1): [100/1000]	Time 0.333 (0.413)	Loss 0.607 (0.560)	Prec@1 81.333 (80.858)
+Test-(1): [200/1000]	Time 0.372 (0.390)	Loss 0.524 (0.554)	Prec@1 84.000 (81.413)
+Test-(1): [300/1000]	Time 0.458 (0.391)	Loss 0.825 (0.566)	Prec@1 69.333 (80.833)
+Test-(1): [400/1000]	Time 0.458 (0.400)	Loss 0.278 (0.564)	Prec@1 88.000 (80.928)
+Test-(1): [500/1000]	Time 0.454 (0.399)	Loss 0.772 (0.568)	Prec@1 70.667 (80.862)
+Test-(1): [600/1000]	Time 0.352 (0.397)	Loss 0.412 (0.578)	Prec@1 85.333 (80.426)
+Test-(1): [700/1000]	Time 0.368 (0.394)	Loss 0.320 (0.573)	Prec@1 89.333 (80.643)
+Test-(1): [800/1000]	Time 0.408 (0.394)	Loss 0.383 (0.571)	Prec@1 88.000 (80.686)
+Test-(1): [900/1000]	Time 0.396 (0.397)	Loss 0.631 (0.572)	Prec@1 77.333 (80.595)
+ * Prec@1 80.612 Best_prec1 78.033
+Test accuracy 80.612 h 0.4707052
+===================================== Round 3 =====================================
+Testset: 1000-------------3
+Test-(1): [100/1000]	Time 0.396 (0.411)	Loss 0.641 (0.559)	Prec@1 86.667 (80.977)
+Test-(1): [200/1000]	Time 0.405 (0.395)	Loss 0.609 (0.564)	Prec@1 81.333 (80.789)
+Test-(1): [300/1000]	Time 0.376 (0.392)	Loss 0.969 (0.575)	Prec@1 68.000 (80.664)
+Test-(1): [400/1000]	Time 0.387 (0.389)	Loss 0.570 (0.571)	Prec@1 76.000 (80.761)
+Test-(1): [500/1000]	Time 0.426 (0.388)	Loss 0.763 (0.567)	Prec@1 72.000 (80.761)
+Test-(1): [600/1000]	Time 0.383 (0.395)	Loss 0.722 (0.564)	Prec@1 76.000 (80.925)
+Test-(1): [700/1000]	Time 0.404 (0.394)	Loss 0.626 (0.568)	Prec@1 84.000 (80.797)
+Test-(1): [800/1000]	Time 0.386 (0.395)	Loss 0.742 (0.566)	Prec@1 80.000 (80.886)
+Test-(1): [900/1000]	Time 0.380 (0.395)	Loss 0.549 (0.569)	Prec@1 81.333 (80.707)
+ * Prec@1 80.680 Best_prec1 78.033
+Test accuracy 80.68 h 0.4770074
+===================================== Round 4 =====================================
+Testset: 1000-------------4
+Test-(1): [100/1000]	Time 0.484 (0.404)	Loss 0.478 (0.569)	Prec@1 85.333 (81.056)
+Test-(1): [200/1000]	Time 0.376 (0.403)	Loss 0.545 (0.570)	Prec@1 77.333 (80.829)
+Test-(1): [300/1000]	Time 0.384 (0.401)	Loss 0.154 (0.566)	Prec@1 93.333 (80.979)
+Test-(1): [400/1000]	Time 0.326 (0.395)	Loss 1.237 (0.569)	Prec@1 58.667 (80.745)
+Test-(1): [500/1000]	Time 0.367 (0.391)	Loss 0.430 (0.566)	Prec@1 81.333 (80.809)
+Test-(1): [600/1000]	Time 0.365 (0.389)	Loss 0.465 (0.562)	Prec@1 78.667 (80.892)
+Test-(1): [700/1000]	Time 0.360 (0.387)	Loss 0.805 (0.561)	Prec@1 80.000 (80.957)
+Test-(1): [800/1000]	Time 0.401 (0.388)	Loss 0.403 (0.559)	Prec@1 88.000 (80.992)
+Test-(1): [900/1000]	Time 0.392 (0.388)	Loss 0.613 (0.559)	Prec@1 82.667 (81.049)
+ * Prec@1 80.999 Best_prec1 78.033
+Test accuracy 80.998665 h 0.46042898
+Aver_accuracy: 80.80587 Aver_h 0.47216338515281675
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='CubBird', dataset_dir='../CubBird', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.0001, mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3', print_freq=100, query_num=15, resume='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar', shot_num=5, testepisodeSize=1, way_num=5, workers=8)
+./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar
+=> loaded checkpoint './results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar' (epoch 1)
+FourLayer_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (classifier): DM_SiameseNet_Metric(
+    (fully_connect1): Linear(in_features=28224, out_features=1, bias=True)
+    (Norm_layer): BatchNorm1d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (FC_layer): Conv1d(1, 1, kernel_size=(2,), stride=(1,), dilation=(5,), bias=False)
+  )
+)
+===================================== Round 0 =====================================
+Testset: 1000-------------0
+Test-(1): [100/1000]	Time 0.371 (0.377)	Loss 0.572 (0.520)	Prec@1 80.000 (82.442)
+Test-(1): [200/1000]	Time 0.386 (0.367)	Loss 0.550 (0.535)	Prec@1 76.000 (81.731)
+Test-(1): [300/1000]	Time 0.362 (0.365)	Loss 0.355 (0.533)	Prec@1 89.333 (81.785)
+Test-(1): [400/1000]	Time 0.468 (0.365)	Loss 0.558 (0.537)	Prec@1 82.667 (81.653)
+Test-(1): [500/1000]	Time 0.409 (0.369)	Loss 0.104 (0.547)	Prec@1 96.000 (81.389)
+Test-(1): [600/1000]	Time 0.363 (0.369)	Loss 0.453 (0.548)	Prec@1 84.000 (81.367)
+Test-(1): [700/1000]	Time 0.384 (0.373)	Loss 0.703 (0.553)	Prec@1 70.667 (81.236)
+Test-(1): [800/1000]	Time 0.347 (0.372)	Loss 0.432 (0.556)	Prec@1 85.333 (81.092)
+Test-(1): [900/1000]	Time 0.398 (0.374)	Loss 0.397 (0.554)	Prec@1 89.333 (81.120)
+ * Prec@1 81.147 Best_prec1 78.033
+Test accuracy 81.14667 h 0.4711278
+===================================== Round 1 =====================================
+Testset: 1000-------------1
+Test-(1): [100/1000]	Time 0.341 (0.373)	Loss 0.428 (0.618)	Prec@1 85.333 (79.274)
+Test-(1): [200/1000]	Time 0.428 (0.378)	Loss 1.050 (0.599)	Prec@1 62.667 (79.721)
+Test-(1): [300/1000]	Time 0.428 (0.392)	Loss 0.826 (0.584)	Prec@1 84.000 (80.368)
+Test-(1): [400/1000]	Time 0.448 (0.398)	Loss 0.348 (0.586)	Prec@1 93.333 (80.243)
+Test-(1): [500/1000]	Time 0.355 (0.397)	Loss 0.210 (0.585)	Prec@1 90.667 (80.330)
+Test-(1): [600/1000]	Time 0.367 (0.392)	Loss 1.002 (0.588)	Prec@1 69.333 (80.184)
+Test-(1): [700/1000]	Time 0.336 (0.391)	Loss 0.782 (0.590)	Prec@1 69.333 (80.038)
+Test-(1): [800/1000]	Time 0.385 (0.389)	Loss 0.703 (0.588)	Prec@1 76.000 (80.213)
+Test-(1): [900/1000]	Time 0.353 (0.389)	Loss 0.838 (0.584)	Prec@1 66.667 (80.321)
+ * Prec@1 80.435 Best_prec1 78.033
+Test accuracy 80.43467 h 0.4845321
+===================================== Round 2 =====================================
+Testset: 1000-------------2
+Test-(1): [100/1000]	Time 0.352 (0.399)	Loss 0.626 (0.589)	Prec@1 85.333 (79.855)
+Test-(1): [200/1000]	Time 0.382 (0.379)	Loss 0.450 (0.578)	Prec@1 88.000 (80.206)
+Test-(1): [300/1000]	Time 0.346 (0.374)	Loss 0.422 (0.577)	Prec@1 88.000 (80.505)
+Test-(1): [400/1000]	Time 0.390 (0.378)	Loss 0.444 (0.577)	Prec@1 81.333 (80.399)
+Test-(1): [500/1000]	Time 0.339 (0.376)	Loss 0.390 (0.575)	Prec@1 85.333 (80.548)
+Test-(1): [600/1000]	Time 0.388 (0.381)	Loss 0.449 (0.579)	Prec@1 86.667 (80.477)
+Test-(1): [700/1000]	Time 0.426 (0.380)	Loss 0.452 (0.579)	Prec@1 85.333 (80.384)
+Test-(1): [800/1000]	Time 0.378 (0.383)	Loss 0.825 (0.581)	Prec@1 80.000 (80.285)
+Test-(1): [900/1000]	Time 0.387 (0.382)	Loss 0.588 (0.580)	Prec@1 78.667 (80.334)
+ * Prec@1 80.459 Best_prec1 78.033
+Test accuracy 80.458664 h 0.46012875
+===================================== Round 3 =====================================
+Testset: 1000-------------3
+Test-(1): [100/1000]	Time 0.370 (0.392)	Loss 0.671 (0.582)	Prec@1 76.000 (80.370)
+Test-(1): [200/1000]	Time 0.400 (0.395)	Loss 1.140 (0.560)	Prec@1 69.333 (81.413)
+Test-(1): [300/1000]	Time 0.353 (0.401)	Loss 0.537 (0.567)	Prec@1 85.333 (81.107)
+Test-(1): [400/1000]	Time 0.378 (0.398)	Loss 0.623 (0.564)	Prec@1 76.000 (81.217)
+Test-(1): [500/1000]	Time 0.413 (0.397)	Loss 0.422 (0.565)	Prec@1 78.667 (81.051)
+Test-(1): [600/1000]	Time 0.417 (0.396)	Loss 0.592 (0.567)	Prec@1 80.000 (80.958)
+Test-(1): [700/1000]	Time 0.392 (0.396)	Loss 0.619 (0.563)	Prec@1 73.333 (81.075)
+Test-(1): [800/1000]	Time 0.410 (0.399)	Loss 0.525 (0.567)	Prec@1 84.000 (81.034)
+Test-(1): [900/1000]	Time 0.392 (0.398)	Loss 0.760 (0.571)	Prec@1 73.333 (80.870)
+ * Prec@1 80.967 Best_prec1 78.033
+Test accuracy 80.966675 h 0.46134618
+===================================== Round 4 =====================================
+Testset: 1000-------------4
+Test-(1): [100/1000]	Time 0.448 (0.408)	Loss 0.430 (0.531)	Prec@1 85.333 (81.584)
+Test-(1): [200/1000]	Time 0.371 (0.395)	Loss 0.679 (0.547)	Prec@1 80.000 (80.935)
+Test-(1): [300/1000]	Time 0.370 (0.386)	Loss 0.320 (0.546)	Prec@1 88.000 (81.028)
+Test-(1): [400/1000]	Time 0.457 (0.387)	Loss 0.543 (0.555)	Prec@1 81.333 (80.835)
+Test-(1): [500/1000]	Time 0.360 (0.392)	Loss 0.263 (0.561)	Prec@1 90.667 (80.620)
+Test-(1): [600/1000]	Time 0.466 (0.391)	Loss 0.520 (0.565)	Prec@1 81.333 (80.563)
+Test-(1): [700/1000]	Time 0.477 (0.390)	Loss 0.549 (0.567)	Prec@1 82.667 (80.601)
+Test-(1): [800/1000]	Time 0.376 (0.395)	Loss 0.705 (0.566)	Prec@1 78.667 (80.681)
+Test-(1): [900/1000]	Time 0.343 (0.395)	Loss 0.675 (0.567)	Prec@1 80.000 (80.614)
+ * Prec@1 80.776 Best_prec1 78.033
+Test accuracy 80.776 h 0.46855262
+Aver_accuracy: 80.75654 Aver_h 0.4691374897956848
+Namespace(basemodel='Conv64F', beta1=0.5, clamp_lower=-0.01, clamp_upper=0.01, cuda=True, data_name='CubBird', dataset_dir='../CubBird', episodeSize=1, episode_test_num=1000, episode_train_num=10000, episode_val_num=1000, epochs=30, imageSize=84, lr=0.0001, mode='test', nc=3, neighbor_k=3, ngpu=1, outf='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3', print_freq=100, query_num=15, resume='./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar', shot_num=5, testepisodeSize=1, way_num=5, workers=8)
+./results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar
+=> loaded checkpoint './results/DM_SiameseNet_CubBird_Conv64F_5Way_5Shot_K3/model_best.pth.tar' (epoch 1)
+FourLayer_64F(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+    (3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (5): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (6): LeakyReLU(negative_slope=0.2, inplace=True)
+    (7): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (8): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (10): LeakyReLU(negative_slope=0.2, inplace=True)
+    (11): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (12): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (13): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (classifier): DM_SiameseNet_Metric(
+    (fully_connect1): Linear(in_features=28224, out_features=1, bias=True)
+    (Norm_layer): BatchNorm1d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (FC_layer): Conv1d(1, 1, kernel_size=(2,), stride=(1,), dilation=(5,), bias=False)
+  )
+)
+===================================== Round 0 =====================================
+Testset: 1000-------------0
+Test-(1): [100/1000]	Time 0.356 (0.397)	Loss 0.333 (0.581)	Prec@1 88.000 (80.647)
+Test-(1): [200/1000]	Time 0.438 (0.381)	Loss 0.455 (0.599)	Prec@1 85.333 (79.907)
+Test-(1): [300/1000]	Time 0.358 (0.379)	Loss 0.238 (0.597)	Prec@1 94.667 (79.734)
+Test-(1): [400/1000]	Time 0.390 (0.375)	Loss 0.253 (0.585)	Prec@1 86.667 (80.017)
+Test-(1): [500/1000]	Time 0.355 (0.375)	Loss 0.564 (0.574)	Prec@1 84.000 (80.415)
+Test-(1): [600/1000]	Time 0.373 (0.375)	Loss 0.202 (0.577)	Prec@1 93.333 (80.353)
+Test-(1): [700/1000]	Time 0.469 (0.380)	Loss 1.255 (0.575)	Prec@1 62.667 (80.500)
+Test-(1): [800/1000]	Time 0.351 (0.381)	Loss 0.489 (0.577)	Prec@1 85.333 (80.433)
+Test-(1): [900/1000]	Time 0.368 (0.385)	Loss 0.445 (0.576)	Prec@1 85.333 (80.500)
+ * Prec@1 80.536 Best_prec1 78.033
+Test accuracy 80.536 h 0.4691162
+===================================== Round 1 =====================================
+Testset: 1000-------------1
+Test-(1): [100/1000]	Time 0.342 (0.423)	Loss 0.470 (0.588)	Prec@1 81.333 (80.079)
+Test-(1): [200/1000]	Time 0.351 (0.388)	Loss 0.748 (0.600)	Prec@1 76.000 (79.934)
+Test-(1): [300/1000]	Time 0.344 (0.382)	Loss 0.361 (0.581)	Prec@1 88.000 (80.350)
+Test-(1): [400/1000]	Time 0.447 (0.389)	Loss 1.067 (0.582)	Prec@1 58.667 (80.382)
+Test-(1): [500/1000]	Time 0.352 (0.387)	Loss 0.520 (0.579)	Prec@1 80.000 (80.482)
+Test-(1): [600/1000]	Time 0.377 (0.394)	Loss 0.414 (0.575)	Prec@1 82.667 (80.461)
+Test-(1): [700/1000]	Time 0.458 (0.396)	Loss 0.543 (0.576)	Prec@1 85.333 (80.531)
+Test-(1): [800/1000]	Time 0.462 (0.400)	Loss 0.913 (0.573)	Prec@1 69.333 (80.613)
+Test-(1): [900/1000]	Time 0.393 (0.399)	Loss 0.644 (0.574)	Prec@1 82.667 (80.534)
+ * Prec@1 80.555 Best_prec1 78.033
+Test accuracy 80.55467 h 0.46679187
+===================================== Round 2 =====================================
+Testset: 1000-------------2
+Test-(1): [100/1000]	Time 0.334 (0.410)	Loss 0.596 (0.550)	Prec@1 77.333 (81.439)
+Test-(1): [200/1000]	Time 0.343 (0.384)	Loss 0.352 (0.542)	Prec@1 85.333 (81.658)
+Test-(1): [300/1000]	Time 0.356 (0.382)	Loss 0.726 (0.550)	Prec@1 80.000 (81.440)
+Test-(1): [400/1000]	Time 0.454 (0.389)	Loss 0.458 (0.548)	Prec@1 77.333 (81.543)
+Test-(1): [500/1000]	Time 0.425 (0.400)	Loss 1.089 (0.557)	Prec@1 65.333 (81.168)
+Test-(1): [600/1000]	Time 0.454 (0.402)	Loss 0.676 (0.563)	Prec@1 73.333 (80.972)
+Test-(1): [700/1000]	Time 0.400 (0.404)	Loss 0.724 (0.563)	Prec@1 74.667 (80.905)
+Test-(1): [800/1000]	Time 0.422 (0.408)	Loss 0.695 (0.565)	Prec@1 73.333 (80.804)
+Test-(1): [900/1000]	Time 0.474 (0.409)	Loss 0.919 (0.567)	Prec@1 69.333 (80.722)
+ * Prec@1 80.699 Best_prec1 78.033
+Test accuracy 80.69867 h 0.4812376
+===================================== Round 3 =====================================
+Testset: 1000-------------3
+Test-(1): [100/1000]	Time 0.385 (0.403)	Loss 0.307 (0.567)	Prec@1 84.000 (80.581)
+Test-(1): [200/1000]	Time 0.455 (0.391)	Loss 0.614 (0.571)	Prec@1 77.333 (80.624)
+Test-(1): [300/1000]	Time 0.355 (0.381)	Loss 0.304 (0.577)	Prec@1 88.000 (80.509)
+Test-(1): [400/1000]	Time 0.396 (0.379)	Loss 0.357 (0.591)	Prec@1 86.667 (80.219)
+Test-(1): [500/1000]	Time 0.359 (0.378)	Loss 0.677 (0.584)	Prec@1 84.000 (80.389)
+Test-(1): [600/1000]	Time 0.415 (0.378)	Loss 0.716 (0.581)	Prec@1 76.000 (80.444)
+Test-(1): [700/1000]	Time 0.455 (0.386)	Loss 1.136 (0.579)	Prec@1 66.667 (80.487)
+Test-(1): [800/1000]	Time 0.379 (0.387)	Loss 0.381 (0.570)	Prec@1 88.000 (80.734)
+Test-(1): [900/1000]	Time 0.408 (0.389)	Loss 0.467 (0.569)	Prec@1 81.333 (80.815)
+ * Prec@1 80.731 Best_prec1 78.033
+Test accuracy 80.730675 h 0.47490388
+===================================== Round 4 =====================================
+Testset: 1000-------------4
+Test-(1): [100/1000]	Time 0.349 (0.408)	Loss 0.907 (0.547)	Prec@1 61.333 (81.452)
+Test-(1): [200/1000]	Time 0.340 (0.380)	Loss 0.398 (0.542)	Prec@1 84.000 (81.267)
+Test-(1): [300/1000]	Time 0.434 (0.382)	Loss 0.601 (0.559)	Prec@1 78.667 (80.917)
+Test-(1): [400/1000]	Time 0.382 (0.390)	Loss 0.474 (0.556)	Prec@1 78.667 (80.938)
+Test-(1): [500/1000]	Time 0.329 (0.394)	Loss 0.815 (0.552)	Prec@1 78.667 (81.182)
+Test-(1): [600/1000]	Time 0.380 (0.390)	Loss 0.463 (0.563)	Prec@1 80.000 (80.950)
+Test-(1): [700/1000]	Time 0.419 (0.390)	Loss 0.615 (0.562)	Prec@1 74.667 (80.961)
+Test-(1): [800/1000]	Time 0.454 (0.393)	Loss 0.546 (0.559)	Prec@1 80.000 (81.062)
+Test-(1): [900/1000]	Time 0.336 (0.398)	Loss 0.503 (0.562)	Prec@1 84.000 (80.895)
+ * Prec@1 80.769 Best_prec1 78.033
+Test accuracy 80.769325 h 0.47402555
+Aver_accuracy: 80.65787 Aver_h 0.47321501970291135
