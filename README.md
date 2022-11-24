@@ -42,7 +42,7 @@ or
 python DN4_Test_5way5shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_5Shot_K3/model_best.pth.tar --basemodel Conv64F
 ```
 
-- The results on the miniImageNet dataset (If you modify neighbor_k or lr, you may get better results in some cases): 
+- If you modify neighbor_k or lr, you may get better results in some cases 
 
 
 ## References
