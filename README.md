@@ -19,7 +19,7 @@
 
 - Clone this repo:
 ```bash
-git clone https://github.com/WenbinLee/DN4.git
+https://github.com/wangkang1022/DM-SiameseNet/blob/master
 cd DN4
 ```
 
