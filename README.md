@@ -19,7 +19,7 @@
 
 - Clone this repo:
 ```bash
-https://github.com/wangkang1022/DM-SiameseNet/blob/master
+https://github.com/wangkang1022/DM-SiameseNet
 ```
 
 - Install dependencies.
