@@ -39,7 +39,7 @@ python DN4_Train_5way5shot.py --dataset_dir ./datasets/miniImageNet --data_name 
 ```bash
 python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_1Shot_K3/model_best.pth.tar --basemodel Conv64F
 or
-python DN4_Test_5way1shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_5Shot_K3/model_best.pth.tar --basemodel Conv64F
+python DN4_Test_5way5shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_5Shot_K3/model_best.pth.tar --basemodel Conv64F
 ```
 
 - The results on the miniImageNet dataset (If you modify neighbor_k or lr, you may get better results in some cases): 
