@@ -48,5 +48,5 @@ python DN4_Test_5way5shot.py --resume ./results/DN4_miniImageNet_Conv64F_5Way_5S
 ## References
 Our code is based on Li's contribution. Specifically, except for our core design, Siamese network , everything else （e.g. backbone, dataset, evaluation standards, hyper-parameters）are built on and integrated in https://github.com/WenbinLee/DN4.
 
-##Contact
+#Contact
 - 897893203@qq.com
